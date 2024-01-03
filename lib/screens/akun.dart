@@ -1,5 +1,3 @@
-import 'package:gap/gap.dart';
-
 import '../core.dart';
 
 class AkunScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class AkunScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: color.outlineVariant.withOpacity(0.3),
       appBar: appBarTitle(
-        title: KeyNavBar.akun,
+        title: KeysNavBar.akun,
         context: context,
       ),
       body: Column(

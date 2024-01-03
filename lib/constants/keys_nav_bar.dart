@@ -1,6 +1,8 @@
 import 'package:fresha/core.dart';
 
-class KeyNavBar {
+@immutable
+class KeysNavBar {
+  const KeysNavBar._();
   static const String beranda = 'Beranda';
   static const String kategori = 'Kategori';
   static const String pesanan = 'Pesanan';

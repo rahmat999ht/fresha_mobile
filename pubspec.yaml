@@ -18,6 +18,8 @@ dependencies:
   google_fonts: ^5.1.0
   intl: ^0.18.1
   path: ^1.8.3
+  flutter_svg: ^2.0.9
+  card_swiper: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +28,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/

@@ -5,23 +5,23 @@ import '../core.dart';
 class ScreenConstant {
   static const widgetOptions = [
     NavBarScreen(
-      title: KeyNavBar.beranda,
-      icon: KeyNavBar.iconBeranda,
+      title: KeysNavBar.beranda,
+      icon: KeysNavBar.iconBeranda,
       screen: BerandaScreen(),
     ),
     NavBarScreen(
-      title: KeyNavBar.kategori,
-      icon: KeyNavBar.iconKategori,
+      title: KeysNavBar.kategori,
+      icon: KeysNavBar.iconKategori,
       screen: KategoriScreen(),
     ),
     NavBarScreen(
-      title: KeyNavBar.pesanan,
-      icon: KeyNavBar.iconPesanan,
+      title: KeysNavBar.pesanan,
+      icon: KeysNavBar.iconPesanan,
       screen: PesananScreen(),
     ),
     NavBarScreen(
-      title: KeyNavBar.akun,
-      icon: KeyNavBar.iconAkun,
+      title: KeysNavBar.akun,
+      icon: KeysNavBar.iconAkun,
       screen: AkunScreen(),
     ),
   ];

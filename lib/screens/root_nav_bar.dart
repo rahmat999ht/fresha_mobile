@@ -10,12 +10,13 @@ class RootNavBarScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selectedIndex = ref.watch(selectedIndexProv);
-    final selectedIndexRead = ref.read(selectedIndexProv.notifier);
+    final selectedIndex = ref.watch(selectedIndexNavBarProv);
+    final selectedIndexRead = ref.read(selectedIndexNavBarProv.notifier);
     const screen = ScreenConstant.widgetOptions;
     final curentScreen = screen.elementAt(selectedIndex);
     return Scaffold(
       body: Center(child: curentScreen.screen),
+      resizeToAvoidBottomInset: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: fab(context),
       bottomNavigationBar:
@@ -59,32 +60,32 @@ class RootNavBarScreen extends ConsumerWidget {
           ButtonNavBar(
             index: 0,
             selectedIndex: selectedIndex,
-            label: KeyNavBar.beranda,
-            icon: KeyNavBar.iconBeranda,
+            label: KeysNavBar.beranda,
+            icon: KeysNavBar.iconBeranda,
             onTap: () => selectedIndexRead.state = 0,
           ),
           const Spacer(),
           ButtonNavBar(
             index: 1,
             selectedIndex: selectedIndex,
-            label: KeyNavBar.kategori,
-            icon: KeyNavBar.iconKategori,
+            label: KeysNavBar.kategori,
+            icon: KeysNavBar.iconKategori,
             onTap: () => selectedIndexRead.state = 1,
           ),
           const Spacer(flex: 4),
           ButtonNavBar(
             index: 2,
             selectedIndex: selectedIndex,
-            label: KeyNavBar.pesanan,
-            icon: KeyNavBar.iconPesanan,
+            label: KeysNavBar.pesanan,
+            icon: KeysNavBar.iconPesanan,
             onTap: () => selectedIndexRead.state = 2,
           ),
           const Spacer(),
           ButtonNavBar(
             index: 3,
             selectedIndex: selectedIndex,
-            label: KeyNavBar.akun,
-            icon: KeyNavBar.iconAkun,
+            label: KeysNavBar.akun,
+            icon: KeysNavBar.iconAkun,
             onTap: () => selectedIndexRead.state = 3,
           ),
           const Spacer(),
