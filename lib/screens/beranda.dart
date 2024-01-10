@@ -185,6 +185,7 @@ class BerandaScreen extends ConsumerWidget {
             itemCount: 8,
             itemBuilder: (c, i) {
               return Card(
+                // shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
                 color:
                     selectedIndex == i ? color.primary : color.outlineVariant,
                 child: const SizedBox(
