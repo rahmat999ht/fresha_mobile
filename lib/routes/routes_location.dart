@@ -9,4 +9,6 @@ class RouteLocation {
   static String get kategori => '/kategori';
   static String get pesanan => '/pesanan';
   static String get akun => '/akun';
+
+  static String get pilihlokasi => '/pilihlokasi';
 }

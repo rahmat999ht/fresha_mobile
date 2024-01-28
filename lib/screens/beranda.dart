@@ -18,14 +18,18 @@ class BerandaScreen extends ConsumerWidget {
     final selectedIndexC = ref.read(selectedIndexSwiperProv.notifier);
     final searchC = TextEditingController();
     final swiperC = SwiperController();
+
+    void toScreenPilihLokasi() => context.push(
+          RouteLocation.pilihlokasi,
+        );
     return Scaffold(
       backgroundColor: color.outlineVariant.withOpacity(0.3),
       appBar: appBarBeranda(
-        color: color,
-        titleMedium: titleMedium,
-        titleMediumBold: titleMediumBold,
-        searchC: searchC,
-      ),
+          color: color,
+          titleMedium: titleMedium,
+          titleMediumBold: titleMediumBold,
+          searchC: searchC,
+          onTap: toScreenPilihLokasi),
       body: Column(
         children: [
           contentSwip(
@@ -44,34 +48,34 @@ class BerandaScreen extends ConsumerWidget {
 
   GestureDetector cardDaftarAkun() {
     return GestureDetector(
-          onTap: () {},
-          child: const Card(
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Row(
-                children: [
-                  Gap(20),
-                  Icon(
-                    Icons.login,
-                    size: 32,
-                  ),
-                  Gap(20),
-                  Expanded(
-                    child: Text(
-                      KeysBeranda.daftarAkun,
-                      softWrap: true,
-                      style: TextStyle(
-                        height: 1.2,
-                      ),
-                    ),
-                  ),
-                  Gap(20),
-                ],
+      onTap: () {},
+      child: const Card(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        child: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Gap(20),
+              Icon(
+                Icons.login,
+                size: 32,
               ),
-            ),
+              Gap(20),
+              Expanded(
+                child: Text(
+                  KeysBeranda.daftarAkun,
+                  softWrap: true,
+                  style: TextStyle(
+                    height: 1.2,
+                  ),
+                ),
+              ),
+              Gap(20),
+            ],
           ),
-        );
+        ),
+      ),
+    );
   }
 
   AppBar appBarBeranda({
@@ -79,30 +83,37 @@ class BerandaScreen extends ConsumerWidget {
     required TextStyle titleMedium,
     required TextStyle titleMediumBold,
     required TextEditingController searchC,
+    required void Function() onTap,
   }) {
     return AppBar(
       backgroundColor: color.background,
       centerTitle: true,
-      title: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.location_on,
-            color: color.onBackground,
-          ),
-          RichText(
-            text: TextSpan(
-              text: KeysBeranda.dikirimKe,
-              style: titleMedium,
-              children: <TextSpan>[
-                TextSpan(
-                  text: KeysBeranda.pilihLokasi,
-                  style: titleMediumBold,
-                ),
-              ],
+      title: GestureDetector(
+        onTap: () {
+          onTap;
+          print("object");
+        },
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.location_on,
+              color: color.onBackground,
             ),
-          )
-        ],
+            RichText(
+              text: TextSpan(
+                text: KeysBeranda.dikirimKe,
+                style: titleMedium,
+                children: <TextSpan>[
+                  TextSpan(
+                    text: KeysBeranda.pilihLokasi,
+                    style: titleMediumBold,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
       bottom: formSearch(searchC),
     );
