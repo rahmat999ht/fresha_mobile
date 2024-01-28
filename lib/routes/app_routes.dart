@@ -1,4 +1,3 @@
-
 import '../core.dart';
 
 final appRoutes = [
@@ -27,5 +26,9 @@ final appRoutes = [
   //   parentNavigatorKey: navigationKey,
   //   builder: AkunScreen.builder,
   // ),
-
+  GoRoute(
+    path: RouteLocation.pilihlokasi,
+    parentNavigatorKey: navigationKey,
+    builder: PilihLokasiScreen.builder,
+  ),
 ];
