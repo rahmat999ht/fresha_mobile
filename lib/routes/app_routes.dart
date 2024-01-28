@@ -12,11 +12,11 @@ final appRoutes = [
   //   parentNavigatorKey: navigationKey,
   //   builder: BerandaScreen.builder,
   // ),
-  // GoRoute(
-  //   path: RouteLocation.kategori,
-  //   parentNavigatorKey: navigationKey,
-  //   builder: KategoriScreen.builder,
-  // ),
+  GoRoute(
+    path: RouteLocation.kategori,
+    parentNavigatorKey: navigationKey,
+    builder: KategoriScreen.builder,
+  ),
   // GoRoute(
   //   path: RouteLocation.pesanan,
   //   parentNavigatorKey: navigationKey,
