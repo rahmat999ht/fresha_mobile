@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import '../core.dart';
 
 class BerandaScreen extends ConsumerWidget {
@@ -19,17 +21,22 @@ class BerandaScreen extends ConsumerWidget {
     final searchC = TextEditingController();
     final swiperC = SwiperController();
 
-    void toScreenPilihLokasi() => context.push(
-          RouteLocation.pilihlokasi,
-        );
+    Future toScreenPilihLokasi() {
+      log("object");
+      return context.push(
+        RouteLocation.pilihlokasi,
+      );
+    }
+
     return Scaffold(
       backgroundColor: color.outlineVariant.withOpacity(0.3),
       appBar: appBarBeranda(
-          color: color,
-          titleMedium: titleMedium,
-          titleMediumBold: titleMediumBold,
-          searchC: searchC,
-          onTap: toScreenPilihLokasi),
+        color: color,
+        titleMedium: titleMedium,
+        titleMediumBold: titleMediumBold,
+        searchC: searchC,
+        onTapTitle: toScreenPilihLokasi,
+      ),
       body: Column(
         children: [
           contentSwip(
@@ -83,16 +90,13 @@ class BerandaScreen extends ConsumerWidget {
     required TextStyle titleMedium,
     required TextStyle titleMediumBold,
     required TextEditingController searchC,
-    required void Function() onTap,
+    required void Function() onTapTitle,
   }) {
     return AppBar(
       backgroundColor: color.background,
       centerTitle: true,
       title: GestureDetector(
-        onTap: () {
-          onTap;
-          print("object");
-        },
+        onTap: onTapTitle,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
