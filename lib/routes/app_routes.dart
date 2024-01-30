@@ -1,6 +1,19 @@
+import 'package:fresha/screens/login.dart';
+import 'package:fresha/screens/splash.dart';
+
 import '../core.dart';
 
 final appRoutes = [
+  GoRoute(
+    path: RouteLocation.splash,
+    parentNavigatorKey: navigationKey,
+    builder: SplashScreen.builder,
+  ),
+  GoRoute(
+    path: RouteLocation.login,
+    parentNavigatorKey: navigationKey,
+    builder: LoginScreen.builder,
+  ),
   GoRoute(
     path: RouteLocation.navBar,
     parentNavigatorKey: navigationKey,

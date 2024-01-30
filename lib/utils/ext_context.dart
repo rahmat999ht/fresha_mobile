@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:fresha/core.dart';
 
 extension BuildContextExtentions on BuildContext {
   ThemeData get _theme => Theme.of(this);
@@ -19,4 +19,12 @@ extension BuildContextExtentions on BuildContext {
       textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold);
   TextStyle get titleSmallBold =>
       textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold);
+
+  void goLogin() {
+    push(RouteLocation.login);
+  }
+
+  void goPilihLokasi() {
+    push(RouteLocation.pilihlokasi);
+  }
 }

@@ -10,8 +10,11 @@ class PilihLokasiScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
+    return  Scaffold(
+      appBar: AppBar(
+        title: const Text('PilihLokasiScreen'),
+      ),
+      body:const Center(
         child: Text('PilihLokasiScreen'),
       ),
     );

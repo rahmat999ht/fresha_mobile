@@ -4,6 +4,8 @@ import 'package:flutter/foundation.dart' show immutable;
 class RouteLocation {
   const RouteLocation._();
 
+  static String get splash => '/splash';
+  static String get login => '/login';
   static String get navBar => '/navBar';
   static String get beranda => '/beranda';
   static String get kategori => '/kategori';

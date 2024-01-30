@@ -21,13 +21,6 @@ class BerandaScreen extends ConsumerWidget {
     final searchC = TextEditingController();
     final swiperC = SwiperController();
 
-    Future toScreenPilihLokasi() {
-      log("object");
-      return context.push(
-        RouteLocation.pilihlokasi,
-      );
-    }
-
     return Scaffold(
       backgroundColor: color.outlineVariant.withOpacity(0.3),
       appBar: appBarBeranda(
@@ -35,7 +28,7 @@ class BerandaScreen extends ConsumerWidget {
         titleMedium: titleMedium,
         titleMediumBold: titleMediumBold,
         searchC: searchC,
-        onTapTitle: toScreenPilihLokasi,
+        onTapTitle: context.goPilihLokasi,
       ),
       body: Column(
         children: [
@@ -47,15 +40,19 @@ class BerandaScreen extends ConsumerWidget {
             selectedIndex: selectedIndex,
           ),
           const Gap(20),
-          cardDaftarAkun(),
+          cardDaftarAkun(
+            onTapLogin: context.goLogin,
+          ),
         ],
       ),
     );
   }
 
-  GestureDetector cardDaftarAkun() {
+  GestureDetector cardDaftarAkun({
+    required void Function() onTapLogin,
+  }) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTapLogin,
       child: const Card(
         margin: EdgeInsets.symmetric(horizontal: 20),
         child: Padding(

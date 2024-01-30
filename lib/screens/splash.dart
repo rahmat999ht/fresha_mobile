@@ -1,21 +1,21 @@
 import '../core.dart';
 
-class KategoriScreen extends StatelessWidget {
-  static KategoriScreen builder(
+class SplashScreen extends StatelessWidget {
+  static SplashScreen builder(
     BuildContext context,
     GoRouterState state,
   ) =>
-      const KategoriScreen();
-  const KategoriScreen({super.key});
+      const SplashScreen();
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('KategoriScreen'),
+        title: const Text('SplashScreen'),
       ),
       body: const Center(
-        child: Text('KategoriScreen'),
+        child: Text('SplashScreen'),
       ),
     );
   }
