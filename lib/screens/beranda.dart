@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import '../core.dart';
 
 class BerandaScreen extends ConsumerWidget {
@@ -41,7 +39,7 @@ class BerandaScreen extends ConsumerWidget {
           ),
           const Gap(20),
           cardDaftarAkun(
-            onTapLogin: context.goLogin,
+            onTapLogin: context.goWelcome,
           ),
         ],
       ),

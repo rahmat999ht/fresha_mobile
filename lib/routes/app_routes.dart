@@ -1,5 +1,7 @@
 import 'package:fresha/screens/login.dart';
+import 'package:fresha/screens/signin.dart';
 import 'package:fresha/screens/splash.dart';
+import 'package:fresha/screens/welcome.dart';
 
 import '../core.dart';
 
@@ -10,9 +12,19 @@ final appRoutes = [
     builder: SplashScreen.builder,
   ),
   GoRoute(
+    path: RouteLocation.welcome,
+    parentNavigatorKey: navigationKey,
+    builder: WelcomeScreen.builder,
+  ),
+  GoRoute(
     path: RouteLocation.login,
     parentNavigatorKey: navigationKey,
     builder: LoginScreen.builder,
+  ),
+  GoRoute(
+    path: RouteLocation.signin,
+    parentNavigatorKey: navigationKey,
+    builder: SignInScreen.builder,
   ),
   GoRoute(
     path: RouteLocation.navBar,

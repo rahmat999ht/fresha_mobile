@@ -24,6 +24,14 @@ extension BuildContextExtentions on BuildContext {
     push(RouteLocation.login);
   }
 
+  void goSignin() {
+    push(RouteLocation.signin);
+  }
+
+  void goWelcome() {
+    push(RouteLocation.welcome);
+  }
+
   void goPilihLokasi() {
     push(RouteLocation.pilihlokasi);
   }
